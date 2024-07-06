@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+}
+.hi{
+    width: 100%;
+    height: 100vh;
+    background-image: url("新增標題.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(235, 164, 176);
+}
+.gm{
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+}
+.gg{
+    width: 50%;
+}
+.kk{
+    width: 50%;}
+.p1{
+    width: 48%;
+}
+.p2{
+    width: 48%;
+}
+.p3{
+    width: 48%;
+}
+.oo{
+    width: 30%;
+}
+.pp{
+    display: flex;
+    justify-content: space-between;
+}
+.uu{
+    font-size: 30px;
+}
+.ii{
+    width: 30%;
+}
+.qq{
+    width: 100%;
+    background-color: purple;
+    height: 50px;
+    position: fixed;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.op{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}

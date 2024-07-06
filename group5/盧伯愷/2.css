@@ -1,0 +1,25 @@
+.a{
+     height: 50px;
+     width: 100%;
+     background-color: skyblue;
+     display: flex;
+     justify-content: center;
+     margin: 10px;
+     padding: 10px;
+}
+.b{
+    text-align: start;
+}
+.container{
+    text-align: center;
+}
+.c{margin: 10px;}
+
+.e{
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-lakescape-landscape-nature-scenery-hd-image_2950137.jpg");
+    background-size: cover;
+}
+.a a {
+    text-decoration: none;
+    color: rgb(0, 68, 255);
+}

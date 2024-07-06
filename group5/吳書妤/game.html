@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body background="https://s.yimg.com/ob/image/10376e2b-08ba-4d65-a310-eec96af8122f.jpg">
+    <h1 class="a">猜數字遊戲,歡迎來到我的遊戲</h1>
+    <br>
+    <p class="b">請猜一個數字介於1~100</p>
+    <input class="c" type="number" id="guess" min="1" max="100">
+    <button class="d" onclick="checkGuess()">ok!</button>
+    <p class="p" id="message"></p>
+
+    <script>
+        var secretnumber = Math.floor(Math.random() *100) + 1;
+
+        function checkGuess() {
+            var guess = parseInt(document.getElementById("guess").value);
+            
+        if (guess === secretnumber) {
+        document.getElementById("message").innerHTML ="恭喜！你猜對了！";
+         } else if (guess<secretnumber){
+        document.getElementById("message").innerHTML = "再大一點";
+        }
+        else{
+        document.getElementById("message").innerHTML = "再小一點"
+        }
+        }
+    </script>
+</body>
+</html>

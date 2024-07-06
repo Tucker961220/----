@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>畫畫網站</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBkchF0BZS64C4f53OllWjKaMl-Po2HrLa_Q&s);
+    }
+    #canvas-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    #canvas {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: crosshair;
+    }
+    #toolbar {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .tool {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border: none;
+        background-color: #ddd;
+        border-radius: 5px;
+    }
+    .tool.active {
+        background-color: #bfbfbf;
+    }
+    .color-picker {
+        display: none;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 240px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1;
+    }
+    .color-picker button {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<link rel="stylesheet" href="1234.css">
+<body>
+
+    <h1>畫畫網站</h1>
+    <div id="toolbar">
+        <button class="tool" onclick="showColorPicker()">Choose Color</button>
+        <div class="color-picker" id="colorPicker">
+            <button style="background-color: #000000;" onclick="changeColor('#000000')"></button>
+            <button style="background-color: #ffffff; border: 1px solid #ccc;" onclick="changeColor('#ffffff')"></button>
+            <button style="background-color: #ff0000;" onclick="changeColor('#ff0000')"></button>
+            <button style="background-color: #00ff00;" onclick="changeColor('#00ff00')"></button>
+            <button style="background-color: #0000ff;" onclick="changeColor('#0000ff')"></button>
+            <button style="background-color: #ffff00;" onclick="changeColor('#ffff00')"></button>
+            <button style="background-color: #ff00ff;" onclick="changeColor('#ff00ff')"></button>
+            <button style="background-color: #00ffff;" onclick="changeColor('#00ffff')"></button>
+            <button style="background-color: #800000;" onclick="changeColor('#800000')"></button>
+            <button style="background-color: #008000;" onclick="changeColor('#008000')"></button>
+            <button style="background-color: #000080;" onclick="changeColor('#000080')"></button>
+            <button style="background-color: #808000;" onclick="changeColor('#808000')"></button>
+            <button style="background-color: #800080;" onclick="changeColor('#800080')"></button>
+            <button style="background-color: #008080;" onclick="changeColor('#008080')"></button>
+            <button style="background-color: #c0c0c0;" onclick="changeColor('#c0c0c0')"></button>
+            <button style="background-color: #808080;" onclick="changeColor('#808080')"></button>
+            <button style="background-color: #ff9900;" onclick="changeColor('#ff9900')"></button>
+            <button style="background-color: #993300;" onclick="changeColor('#993300')"></button>
+            <button style="background-color: #333399;" onclick="changeColor('#333399')"></button>
+            <button style="background-color: #339933;" onclick="changeColor('#339933')"></button>
+            <button style="background-color: #993399;" onclick="changeColor('#993399')"></button>
+            <button style="background-color: #339999;" onclick="changeColor('#339999')"></button>
+            <button style="background-color: #999933;" onclick="changeColor('#999933')"></button>
+        </div>
+        <button class="tool" onclick="toggleEraser()">Eraser</button>
+        <button class="tool" onclick="clearCanvas()">Clear</button>
+        
+        <!-- 新增筆刷選項 -->
+        <select id="brushSelect" class="tool" onchange="changeBrush(this.value)">
+            <option value="5">Brush 1</option>
+            <option value="10">Brush 2</option>
+            <option value="15">Brush 3</option>
+            <option value="20">Brush 4</option>
+            <option value="25">Brush 5</option>
+            <!-- 可以繼續添加更多筆刷選項 -->
+        </select>
+    </div>
+    <br><hr>
+    <div id="canvas-container">
+        <canvas id="canvas" width="800" height="500"></canvas>
+        <!-- 在canvas-container之后添加 -->
+        <img src="https://img.88tph.com/88/c3/iMMN85RYEeyXVQAWPgWqLw-1.jpg!/watermark/url/L3BhdGgvbG9nby5wbmc/align/center/fw/640/quality/70">
+</div>
+
+<div id="introduction">
+    <h2>關於我們</h2>
+    <p>畫畫網站是一個提供給創作者和藝術愛好者的平台，您可以在這裡自由地描繪您的想像力和創意。無論是業餘愛好者還是專業藝術家，都能在這裡找到適合自己的工具和空間。</p>
+    <p>如有任何問題或建議，請聯繫我們：111111111111111</p>
+</div>
+
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let painting = false;
+        let currentColor = '#000000';
+        let eraserMode = false;
+        let brushSize = 5; // 初始筆刷大小
+
+        canvas.addEventListener('mousedown', startPosition);
+        canvas.addEventListener('mouseup', finishedPosition);
+        canvas.addEventListener('mousemove', draw);
+
+        function startPosition(e) {
+            painting = true;
+            draw(e);
+        }
+
+        function finishedPosition() {
+            painting = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!painting) return;
+            ctx.lineWidth = brushSize;
+            ctx.lineCap = 'round';
+            if (eraserMode) {
+                ctx.strokeStyle = '#ffffff'; // White color for eraser
+            } else {
+                ctx.strokeStyle = currentColor;
+            }
+            
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        }
+
+        function changeColor(color) {
+            currentColor = color;
+            closeColorPicker();
+            resetToolButtons();
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function toggleEraser() {
+            eraserMode = !eraserMode;
+            if (eraserMode) {
+                resetToolButtons();
+                document.getElementById('eraserBtn').classList.add('active');
+            } else {
+                resetToolButtons();
+                document.getElementById('colorPicker').style.display = 'none';
+                document.getElementById('chooseColorBtn').classList.remove('active');
+                document.getElementById(colorToButtonId(currentColor)).classList.add('active');
+            }
+        }
+
+        function showColorPicker() {
+            const colorPicker = document.getElementById('colorPicker');
+            if (colorPicker.style.display === 'block') {
+                closeColorPicker();
+            } else {
+                colorPicker.style.display = 'block';
+                document.getElementById('chooseColorBtn').classList.add('active');
+            }
+        }
+
+        function closeColorPicker() {
+            document.getElementById('colorPicker').style.display = 'none';
+            document.getElementById('chooseColorBtn').classList.remove('active');
+        }
+
+        function resetToolButtons() {
+            const toolButtons = document.querySelectorAll('.tool');
+            toolButtons.forEach(button => button.classList.remove('active'));
+            if (!eraserMode) {
+                document.getElementById(colorToButtonId(currentColor)).classList.add('active');
+            }
+        }
+
+        function colorToButtonId(color) {
+            switch(color) {
+                case '#000000': return 'blackBtn';
+                case '#ffffff': return 'whiteBtn';
+                case '#ff0000': return 'redBtn';
+                case '#00ff00': return 'greenBtn';
+                case '#0000ff': return 'blueBtn';
+                case '#ffff00': return 'yellowBtn';
+                case '#ff00ff': return 'magentaBtn';
+                case '#00ffff': return 'cyanBtn';
+                case '#800000': return 'maroonBtn';
+                case '#008000': return 'greenBtn2';
+                case '#000080': return 'navyBtn';
+                case '#808000': return 'oliveBtn';
+                case '#800080': return 'purpleBtn';
+                case '#008080': return 'tealBtn';
+                case '#c0c0c0': return 'silverBtn';
+                case '#808080': return 'grayBtn';
+                case '#ff9900': return 'orangeBtn';
+                case '#993300': return 'brownBtn';
+                case '#333399': return 'indigoBtn';
+                case '#339933': return 'limeBtn';
+                case '#993399': return 'violetBtn';
+                case '#339999': return 'turquoiseBtn';
+                case '#999933': return 'khakiBtn';
+                default: return '';
+            }
+        }
+
+        function changeBrush(size) {
+            brushSize = size;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.title{
+    background-color: rgba(0, 119, 255, 0.39);
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 100;
+    flex-wrap: wrap;
+
+}
+.tools{
+    background-color: rgb(61, 158, 109);
+    font-size: 50px;
+    border-radius: 100;
+    flex-wrap: wrap;
+    text-align: end;
+    display: flex;
+    justify-content: center;
+}
+.img{
+    margin: 10px;
+    display: block;
+    display: flex;
+    justify-content: center;
+}
+.game{
+    display: flex;
+    justify-content: center;
+}
+a{
+    margin: 0.5cm;
+    text-decoration: none;
+}
+.img2{
+    display: flex;
+    color: indigo;
+}
+.首頁{
+    background-image: url('./25b5e6559f6862a5c6b5a4a3e6a4ed20.jpg');
+    background-size: cover;
+}

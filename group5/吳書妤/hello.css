@@ -1,0 +1,19 @@
+.a{
+    height: 500px;
+    width: 100%;
+    background-color: darkorange;
+    border-radius: 20px;
+}
+.b{
+    height: 650px;
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
+}
+.c{
+    text-align: center;
+}
+.d{
+    margin: 10px;
+}

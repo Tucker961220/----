@@ -1,0 +1,26 @@
+.a{
+    justify-content: center;
+    text-align: center;
+    font-size: 200px;
+    color: darkmagenta;
+}
+.b{
+    font-size: 150px;
+}
+.c{
+    font-size: 150px;
+}
+.d{
+    height: 50px;
+    width: 75px;
+}
+.e{
+    font-size: 150px;
+}
+body {
+    background-size: cover;
+}
+.p {
+    font-size: 50px;
+    display: inline;
+}

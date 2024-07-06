@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我介紹</title>
+    <style>
+        /* Reset CSS for basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background-color: #555;
+        }
+        nav a:hover {
+            background-color: #777;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .service {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .contact {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .contact form {
+            display: grid;
+            gap: 10px;
+        }
+        .contact label {
+            font-weight: bold;
+        }
+        .contact input[type="text"],
+        .contact textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .contact input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .contact input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>我的自我介紹</h1>
+        <p>關於我</p>
+    </header>
+
+    <nav>
+        <a href="http://127.0.0.1:5500/%E9%A3%9B%E9%A3%9B%E9%A3%9B.HTML#">首頁</a>
+        <a href="https://www.instagram.com/royn_xu_1110/">關於我</a>
+        <a href="https://www.zlsh.tp.edu.tw/">就讀學校</a>
+        <a href="https://newsimg.koreatimes.co.kr/2024/02/12/fba4bbf6-5c62-412d-a229-65ace6387d0d.jpg">偶像!</a>
+    </nav>
+
+    <div class="container">
+        <section id="services">
+            <h2>我我我</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>喜歡的東西</h3>
+                    <p>手機</p>
+                </div>
+                <div class="service">
+                    <h3>未來想當</h3>
+                    <p>警察!</p>
+                </div>
+                <div class="service">
+                    <h3>功課</h3>
+                    <p>很好!!!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>聯絡!</h2>
+            <div class="contact">
+                <form action="#" method="post">
+                  
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">訊息:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="送出">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

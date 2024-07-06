@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蘿蔔猜拳遊戲</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body class="e">
+    <div class="a">
+        <a href="1.html"><h3 class="c">首頁</h3></a>
+        <a href="d.html"><h3 class="c">猜拳</h3></a>
+        
+    </div>
+<h1>你好，我是蘿蔔🥕</h1>
+<h2>這是我的個人網站</h2>
+<h3>你知道什麼是猜拳嗎?</h3>
+<h4>猜拳就是....</h4>
+<h4 class="b">兩個玩家先各自握緊拳，然後其中一人或者兩人一起共同唸出口令，在說完最後一個音節的同時，兩個玩家出示自己心中想好的手勢。
+
+    石頭：握緊的拳頭。
+    剪刀：或稱「剪子」，中指和食指伸直，其餘手指握緊。某些國家玩家以伸直大拇指和食指代表剪刀。
+    布：五指伸直，張開手掌。手心向下，或向上，或豎直（拇指向上）
+    遊戲的勝負可根據這個食物鏈：石頭 勝 剪子 勝 布 勝 石頭...
+    
+    通常這種簡短的比賽可能會被重複多次，以三局兩勝或五局三勝來決定勝負，也有可能是一局定勝負。</h4>
+    <img src="https://memeprod.ap-south-1.linodeobjects.com/user-template/3d4114794c827b21ba88c579c3160afb.png" alt="">
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p><h2>來玩猜拳吧!</h2></p>
+    <h5>偷偷和你說:蘿蔔石=石頭<br>蘿蔔布=布<br>蘿蔔刀=剪刀</h5>
+    <title>蘿蔔猜拳遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            font-size: 20px;
+            margin: 0 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>猜拳遊戲</h1>
+        <p>請選擇你的蘿蔔：</p>
+        <button onclick="playGame('蘿蔔石🥕🪨')">蘿蔔石🥕🪨</button>
+        <button onclick="playGame('蘿蔔布?')">蘿蔔布?</button>
+        <button onclick="playGame('蘿蔔刀🥕🔪')">蘿蔔刀🥕🔪</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function playGame(playerChoice) {
+            var choices = ['蘿蔔石🥕🪨', '蘿蔔布?', '蘿蔔刀🥕🔪'];
+            var computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            var result;
+            if (playerChoice === computerChoice) {
+                result = "平手！";
+            } else if (
+                (playerChoice === '蘿蔔石🥕🪨' && computerChoice === '蘿蔔刀🥕🔪') ||
+                (playerChoice === '蘿蔔布?' && computerChoice === '蘿蔔石🥕🪨') ||
+                (playerChoice === '蘿蔔刀🥕🔪' && computerChoice === '蘿蔔布?')
+            ) {
+                result = "你贏了！";
+            } else {
+                result = "你輸了！";
+            }
+
+            document.getElementById('result').innerText = `電腦出了 ${computerChoice}，${result}`;
+        }
+    </script>
+    <img src="https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1718604414243.jpg" alt="">
+</body>
+</html>

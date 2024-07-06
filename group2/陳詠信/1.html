@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的網站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="1.css 1.js">
+</head>
+<body>
+    <header>
+        <h1>歡迎來到我的網站</h1>
+        <nav>
+            <ul>
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">聯繫我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>我們提供的服務</h2>
+            <p>這裡可以放一些介紹性的文字，描述你的網站或服務。</p>
+        </section>
+
+        <section id="contact">
+            <h2>聯繫我們</h2>
+            <form id="contactForm">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="message">訊息：</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                
+                <button type="submit">送出</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 我的網站。保留所有權利。</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

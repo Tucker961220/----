@@ -1,0 +1,28 @@
+.麥塊{
+    height: 1000px;
+    width: 10000px;
+}
+.狐狸{
+    height: 100px;
+    width: 100px;
+}
+
+.標題的容器 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.標題圖片{
+    display: flex;
+    justify-content: center;
+}
+.工具列{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 132, 255, 0.372);
+}
+
+.工具列 a{
+    margin: 0.5cm;
+}

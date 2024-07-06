@@ -1,0 +1,82 @@
+body{
+  margin: 0;
+}
+.background{
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rq{
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 10px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, #efbe43 0%, #8c6719 100%);
+	-webkit-border-image: -webkit-linear-gradient(top left, #efbe43 0%, #8c6719 100%);
+	border-image: linear-gradient(to bottom right, #efbe43 0%, #8c6719 100%);
+	border-image-slice: 1;
+}
+.title{
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.th1{
+  margin-top: 20px;
+}
+.th3{
+  margin-top: 30px;
+}
+.btns{
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+.btn{
+  height: 37px;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 37px;
+  font-size: larger;
+  margin-bottom: 10px;
+  padding: 0 7px;
+}
+.content{
+  background-color: rgb(48, 47, 47);
+}
+.none-mp{
+  margin: 0;
+  padding: 0;
+}
+.text-white{
+  color: white;
+}
+.pq{
+  margin-bottom: 30px;
+}
+.content{
+  padding: 10px;
+}
+.qo{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+}
+.ttt{
+  width: 100%;
+  height: 1px;
+  padding: 0 5px;
+  margin: 30px 0;
+  background-color: white;
+}
