@@ -108,3 +108,26 @@ a {
   margin: 5px 0;
   font-size: 16px;
 }
+.pqw{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+}
+.best-img{
+  width: 500px;
+  height: 250px;
+  background-color: #8c6719;
+  margin-bottom: 5px;
+}
+.best-title{
+  color: white;
+  margin-left: -10px;
+}
+.fkio{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.full-width{
+  width: 100%;
+}
