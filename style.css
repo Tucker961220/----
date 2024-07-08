@@ -114,10 +114,9 @@ a {
   margin: 10px 20px;
 }
 .best-img{
-  width: 500px;
-  height: 250px;
-  background-color: #8c6719;
+  width: 100%;
   margin-bottom: 5px;
+  max-width: 500px;
 }
 .best-title{
   color: white;
